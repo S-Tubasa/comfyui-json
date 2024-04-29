@@ -17,7 +17,7 @@ function extractRepoName(repoUrl: string) {
 }
 export async function getBranchInfo(gitUrl: string) {
   const repoName = extractRepoName(gitUrl);
-  console.log(`Fetching repo info... ${gitUrl}`);
+  // console.log(`Fetching repo info... ${gitUrl}`);
   const repo = await fetch(`https://api.github.com/repos/${repoName}`)
     .then((x) => x.json())
     .then((x) => {
@@ -28,7 +28,7 @@ export async function getBranchInfo(gitUrl: string) {
     .catch((e) => {
       // console.error(e);
       // console.log(`Failed to fetch repo info ${e.message}`);
-      console.log(`Failed to fetch repo info (probably rate limited)`);
+      // console.log(`Failed to fetch repo info (probably rate limited)`);
       return null;
     });
 
@@ -45,7 +45,7 @@ export async function getBranchInfo(gitUrl: string) {
     .then((x) => BranchInfoSchema.parse(x))
     .catch((e) => {
       // console.error(e);
-      console.log(`Failed to fetch branch info ${e.message}`);
+      // console.log(`Failed to fetch branch info ${e.message}`);
       return null;
     });
 
