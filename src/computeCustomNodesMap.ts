@@ -71,7 +71,7 @@ export async function computeCustomNodesMap({
     )
   ).json()) as CustomNodeList;
 
-  console.log("Getting extension-node-map.json");
+  // console.log("Getting extension-node-map.json");
 
   // if (!cacheExist) {
   //   console.log("Cache file not found, creating one");
